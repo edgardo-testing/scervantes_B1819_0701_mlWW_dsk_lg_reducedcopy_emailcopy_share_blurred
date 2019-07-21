@@ -2230,6 +2230,25 @@ $(function() {
         }
     });
 
+    // Share with Twitter
+    $('.frb-share__button--twitter').on('click', function (e) {
+        e.preventDefault();
+        var url = encodeURIComponent('https://donate.wikimedia.org');
+        var text = 'Tweet...';
+
+        window.open('https://twitter.com/intent/tweet?text=' + text + '&url='+ url +'&hashtags=wikimedia,donate', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+    });
+
+    // Share with Facebook
+    $('.frb-share__button--facebook').on('click', function (e) {
+        e.preventDefault();
+
+        var url = 'https://donate.wikimedia.org';
+        var text = 'Share... ' + url;
+
+        window.open('https://www.facebook.com/sharer.php?u=' + url, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=500');
+    });
+
     /* Hide banner outside of main namespace (and Main Page, for sites where that isn't in main namespace) */
     if ( mw.config.get('wgNamespaceNumber') > 0 && !mw.config.get('wgIsMainPage') ) {
         mw.centralNotice.bannerData.hideResult = true;
