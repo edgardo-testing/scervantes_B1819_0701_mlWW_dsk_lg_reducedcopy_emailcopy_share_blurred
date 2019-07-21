@@ -1494,6 +1494,9 @@ button.frb-submit.active:hover {
     width: 100%;
     height: 100%;
 }
+.frb-message__share--backdrop {
+
+}
 .frb-share__content {
     z-index: 999;
     position: absolute;
@@ -1501,6 +1504,7 @@ button.frb-submit.active:hover {
     right: 0;
     top: 50%;
     display: block; 
+    text-align: center;
 }
 .frb-message__share:before {
     content: '';
@@ -1637,6 +1641,7 @@ button.frb-submit.active:hover {
             <div class="frb-footer">
                 {{MediaWiki:FundraisingBanners/SmallPrint-2017}}
             </div>
+            <div class="frb-message__share--backdrop"></div>
             <div class="frb-message__share">
                 <div class="frb-share__content">
                     <p class="frb-share__text">Can’t donate right now? Sharing is also caring! ❤️</p>
