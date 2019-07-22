@@ -1672,7 +1672,7 @@ button.frb-submit.active:hover {
                     </a>
                 </div>
                 <div class="frb-share__bottom">
-                    <a href="" class="frb-share__bottom-link">Don’t show this again</a>
+                    <a href="" class="frb-share__dismiss-link frb-share__bottom-link">Don’t show this again</a>
                     <a class="frb-share__bottom-link" href="https://donate.wikimedia.org/wiki/Special:LandingCheck?basic=true&landing_page=Problems_donating">Report a problem</a>
                 </div>
             </div>
@@ -2083,7 +2083,7 @@ $(function() {
         $(this).hide();
     });
 
-    $('.frb-share__dismiss').on('click', function(e) {
+    $('.frb-share__dismiss-link').on('click', function(e) {
         if (e.which === 13 || e.type === 'click') {
             frb.hide();
             e.stopPropagation();
