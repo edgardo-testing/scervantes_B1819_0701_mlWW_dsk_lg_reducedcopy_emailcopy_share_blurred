@@ -1500,10 +1500,15 @@ button.frb-submit.active:hover {
     z-index: 9999;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5);
 }
 .frb-message__share--backdrop {
-
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(255,255,255,0.5);
 }
 .frb-share__content {
     z-index: 999;
@@ -2074,6 +2079,7 @@ $(function() {
         $('.frb-message__share').show();
         $('.frb-message').addClass('blurred');
         $('.frb-form').addClass('blurred');
+        $(this).hide();
 
         // if (e.which === 13 || e.type === 'click') {
         //     frb.hide();
