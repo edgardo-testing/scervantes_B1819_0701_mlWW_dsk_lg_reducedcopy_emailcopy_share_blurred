@@ -1502,6 +1502,7 @@ button.frb-submit.active:hover {
     height: 100%;
 }
 .frb-message__share--backdrop {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2073,18 +2074,20 @@ $(function() {
     });
 
     // Hide Banner when on click and enter when focused
-    $('.frb-close').on('click keypress', function(e) {
-
+    $('.frb-close').on('click keypress', function() {
         // New
         $('.frb-message__share').show();
+        $('.frb-message__share--backdrop').show();
         $('.frb-message').addClass('blurred');
         $('.frb-form').addClass('blurred');
         $(this).hide();
+    });
 
-        // if (e.which === 13 || e.type === 'click') {
-        //     frb.hide();
-        //     e.stopPropagation();
-        // }
+    $('.frb-share__dismiss').on('click', function(e) {
+        if (e.which === 13 || e.type === 'click') {
+            frb.hide();
+            e.stopPropagation();
+        }
     });
 
     // Show RML form on Enter
