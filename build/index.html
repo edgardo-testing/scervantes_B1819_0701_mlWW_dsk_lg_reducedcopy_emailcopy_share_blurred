@@ -1,6 +1,6 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin -->
 
- <!-- CREATED AT: Mon Jul 22 2019 09:10:16 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Mon Jul 22 2019 18:28:07 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -1631,6 +1631,61 @@ button.frb-submit.active:hover {
     html[lang="en"] .frb-message { font-size: 15px; }
 }
 /* End 80% viewport height*/
+
+
+/* Module: Upsell on: Mon Jul 22 2019 18:28:06 GMT-0500 (Central Daylight Time) */
+
+/* STEP 2 */
+.frb--minimized, .frb-step2 { display: none; }
+
+/* STEP 2 UPSELL*/
+.frb-upsell,
+.frb-monthly-diff-amt .frb-amt-monthly {
+    display: none;
+    width: calc(100% + 8px) !important;
+    transition: background-color 0.5s ease;
+    padding: 10px 4px;
+    text-align: center;
+}
+.frb-monthly-diff-amt .frb-amt-monthly {
+    display: block;
+    padding: 0 4px 10px 4px;
+}
+.frb-upsell-cta,
+.frb-upsell-ty {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: bold;
+    text-align: center;
+}
+.frb-upsell-color,
+.frb-monthly-diff-amt .frb-amt-monthly label {
+    display: block;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: normal;
+    padding: 0 5%;
+    margin: .5em 0;
+}
+.frb-monthly-diff-amt-link {
+    font-size: 15px;
+    line-height: 1.3;
+    color: #36c;
+    margin: 8px 2px;
+    padding: 12px 10%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#frb-amt-monthly-other-input {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+}
+/* Module: Upsell */
+    
+
 </style>
 
 <div class="frb-prevent-page-jump"></div>
@@ -1909,6 +1964,9 @@ button.frb-submit.active:hover {
 </div>
 
 <script>
+
+    // {# 'upsell' #}
+
 var frb = frb || {};
 
 frb.show = function() {
