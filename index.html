@@ -179,13 +179,7 @@ body.rtl .frb-close {
     transition: background-color 0.5s ease;
 }
 .frb-message.blurred {
-    -webkit-filter: blur(14px); 
-    -moz-filter: blur(14px);
-    -ms-filter: blur(14px);
-    -o-filter: blur(14px);
     filter: blur(14px);
-    filter: url(#filter-blur);   
-    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='14');
 }
 
 @media (min-width: 1100px) {
@@ -328,13 +322,7 @@ body.rtl .frb-message-icon {
     background: #fff;
 }
 .frb-form.blurred {
-    -webkit-filter: blur(14px); 
-    -moz-filter: blur(14px);
-    -ms-filter: blur(14px);
-    -o-filter: blur(14px);
     filter: blur(14px);
-    filter: url(#filter-blur);   
-    filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='14');
 }
 
 .frb--in-article .frb-form {
@@ -1607,12 +1595,6 @@ button.frb-submit.active:hover {
     text-decoration: underline;
 }
 
-#svg-blur {
-    position:absolute;
-    left:-999px;
-}
-
-
 
 /* Start 80% viewport height */
 @media (max-width: 1400px) and (max-height: 800px) {
@@ -1702,15 +1684,7 @@ button.frb-submit.active:hover {
                 </div>
             </div>
         </div>
-
-        <svg id="svg-blur" version="1.1" xmlns="http://www.w3.org/2000/svg" height="0" width="0">
-            <defs>
-                <filter id="filter-blur" x="0" y="0">
-                    <feGaussianBlur stdDeviation="14">
-                </feGaussianBlur></filter>
-            </defs>
-        </svg>
-
+        
         <div class="frb-message">
             <div class="frb-message-inner">
                 <p class="frb-message__maximized">
