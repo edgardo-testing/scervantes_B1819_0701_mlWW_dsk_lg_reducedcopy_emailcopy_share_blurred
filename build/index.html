@@ -1,6 +1,6 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin -->
 
- <!-- CREATED AT: Tue Jul 23 2019 09:40:14 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Tue Jul 23 2019 11:47:18 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -1631,85 +1631,6 @@ button.frb-submit.active:hover {
     html[lang="en"] .frb-message { font-size: 15px; }
 }
 /* End 80% viewport height*/
-
-
-/* Module: Upsell on: Tue Jul 23 2019 09:40:06 GMT-0500 (Central Daylight Time) */
-
-/* STEP 2 */
-.frb--minimized, .frb-step2 { display: none; }
-
-/* STEP 2 UPSELL*/
-.frb-upsell,
-.frb-monthly-diff-amt .frb-amt-monthly {
-    display: none;
-    width: calc(100% + 8px) !important;
-    transition: background-color 0.5s ease;
-    padding: 10px 4px;
-    text-align: center;
-}
-.frb-monthly-diff-amt .frb-amt-monthly {
-    display: block;
-    padding: 0 4px 10px 4px;
-}
-.frb-upsell-cta,
-.frb-upsell-ty {
-    font-size: 17px;
-    line-height: 1.3;
-    font-weight: bold;
-    text-align: center;
-}
-.frb-upsell-color,
-.frb-monthly-diff-amt .frb-amt-monthly label {
-    display: block;
-    font-size: 15px;
-    line-height: 1.3;
-    font-weight: normal;
-    padding: 0 5%;
-    margin: .5em 0;
-}
-.frb-monthly-diff-amt-link {
-    font-size: 15px;
-    line-height: 1.3;
-    color: #36c;
-    margin: 8px 2px;
-    padding: 12px 10%;
-    text-align: center;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#frb-amt-monthly-other-input {
-    position: relative;
-    text-align: center;
-    font-size: 18px;
-}
-
-
-/* BACK BUTTON */
-.frb-back {
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    left: 27px;
-    top: 0;
-}
-.frb-back:hover .frb-icon path {
-    stroke: #000;
-}
-.frb-back:hover .frb-icon fill {
-    fill: #000;
-}
-.frb-icon-back {
-    height: 13px;
-    width: 20px;
-}
-.frb--minimized .frb-back {
-    display: none !important;
-}
-
-/* Module: Upsell */
-    
-
 </style>
 
 <div class="frb-prevent-page-jump"></div>
@@ -1989,8 +1910,6 @@ button.frb-submit.active:hover {
 
 <script>
 
-    // {# 'upsell' #}
-
 var frb = frb || {};
 
 frb.show = function() {
@@ -2201,7 +2120,7 @@ $(function() {
     });
 
     // Submit/"Donate now" button
-    // $('.frb-submit').on('click keypress', function(e) {
+    $('.frb-submit').on('click keypress', function(e) {
         if ( e.which === 13 || e.type === 'click' ) {
             e.stopPropagation();
             frb.submitForm(frb.storedOptions);
@@ -2382,46 +2301,4 @@ $(function() {
     }
 
 });
-
-
- // Upsell module: Go to the second step of the form
-  $('#continue-btn').on('click', function(e) {
-      e.preventDefault();
-      var status = {amount: false, method: false};
-
-      // Validate amount
-      if( frb.validateAmount() ){
-          status.amount = true;
-      }
-
-      // Validate method
-      if($('input[name="frb-methods"]:checked').length === 1){
-          status.method = true;
-      } else {
-          $('.frb-methods').addClass('frb-haserror');
-          $('.frb-error-method').show();
-      }
-
-      if(status.amount === true && status.method === true){
-          if(!$('.frb-optin').is(':visible')) {
-              $('.frb-optin').slideDown();
-          }
-
-          // Only do step 2 if gift is one-time and payment method supports monthly
-          if( frb.getRecurring(document.getElementById('frb-form')) || $('#frb-frequency-monthly').prop('disabled') ) {
-              frb.submitForm(frb.storedOptions);
-          } else {
-              $('.frb-rml-link').fadeOut();
-              $('.frb-step1').fadeToggle(function(){
-                  $('.frb-step2').fadeToggle();
-                  $('.frb-rml-form').hide();
-                  $('.frb-upsell').show().css('display', 'block');
-                  $('.close-optin').show();
-                  $('.frb-close').hide();
-              });
-          }
-      }
-  });
-    
-
 </script>
