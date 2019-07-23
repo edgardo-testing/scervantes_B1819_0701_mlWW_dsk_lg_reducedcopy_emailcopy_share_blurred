@@ -1,6 +1,6 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin -->
 
- <!-- CREATED AT: Tue Jul 23 2019 12:36:14 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Tue Jul 23 2019 12:38:25 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -187,7 +187,7 @@ body.rtl .frb-close {
     -ms-filter: blur(14px);
     -o-filter: blur(14px);
     filter: blur(14px);
-    filter: url(#filterblur);   
+    filter: url(#filter-blur);   
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='14');
 }
 
@@ -336,7 +336,7 @@ body.rtl .frb-message-icon {
     -ms-filter: blur(14px);
     -o-filter: blur(14px);
     filter: blur(14px);
-    filter: url(#filterblur);   
+    filter: url(#filter-blur);   
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='14');
 }
 
@@ -1709,7 +1709,7 @@ button.frb-submit.active:hover {
         <svg id="svg-blur" version="1.1" xmlns="http://www.w3.org/2000/svg" height="0" width="0">
             <defs>
                 <filter id="filter-blur" x="0" y="0">
-                    <feGaussianBlur stdDeviation="3">
+                    <feGaussianBlur stdDeviation="14">
                 </feGaussianBlur></filter>
             </defs>
         </svg>
