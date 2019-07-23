@@ -2170,9 +2170,19 @@ $(function() {
     });
 
     // Hide Banner when on click and enter when focused
-    $('.frb-close').on('click keypress', function() {
+    $('.frb--in-article .frb-close').on('click keypress', function() {
         // New
-        $('.frb-message__share').show();
+        $('.frb--in-article .frb-message__share').show();
+        // $('.frb-message__share--backdrop').show();
+        // $('.frb-message').addClass('blurred');
+        // $('.frb-form').addClass('blurred');
+        $(this).hide();
+    });
+
+    // Hide Banner when on click and enter when focused
+    $('.frb--minimized .frb-close').on('click keypress', function() {
+        // New
+        $('.frb--minimized .frb-message__share').show();
         // $('.frb-message__share--backdrop').show();
         // $('.frb-message').addClass('blurred');
         // $('.frb-form').addClass('blurred');
