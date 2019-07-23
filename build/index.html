@@ -1,6 +1,6 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin -->
 
- <!-- CREATED AT: Tue Jul 23 2019 18:15:05 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Tue Jul 23 2019 18:20:41 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -2293,9 +2293,17 @@ $(function() {
                 $('.frb-prevent-page-jump').show();
             }
 
+            $('.frb--in-article .frb-message__share').hide();
+            $('.frb--minimized .frb-message__share').show();
+
+
             $('.frb').addClass('frb--minimized');
             $('.frb').removeClass('frb--in-article');
         } else {
+            $('.frb--minimized .frb-message__share').hide();
+
+            $('.frb--in-article .frb-message__share').show();
+            
             $('.frb').addClass('frb--in-article');
             $('.frb-prevent-page-jump').css('display', 'none');
             $('.frb').removeClass('frb--minimized frb-rml-displayed');
