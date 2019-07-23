@@ -1,5 +1,5 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin --><html><head>
- <!-- CREATED AT: Mon Jul 22 2019 20:36:47 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Mon Jul 22 2019 20:39:49 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -1632,7 +1632,7 @@ button.frb-submit.active:hover {
 /* End 80% viewport height*/
 
 
-/* Module: Upsell on: Mon Jul 22 2019 20:36:47 GMT-0500 (Central Daylight Time) */
+/* Module: Upsell on: Mon Jul 22 2019 20:39:49 GMT-0500 (Central Daylight Time) */
 
 /* STEP 2 */
 .frb--minimized, .frb-step2 { display: none; }
@@ -2390,5 +2390,47 @@ $(function() {
     }
 
 });
+
+
+ // Upsell module: Go to the second step of the form
+  $('#continue-btn').on('click', function(e) {
+      e.preventDefault();
+      var status = {amount: false, method: false};
+
+      // Validate amount
+      if( frb.validateAmount() ){
+          status.amount = true;
+      }
+
+      // Validate method
+      if($('input[name="frb-methods"]:checked').length === 1){
+          status.method = true;
+      } else {
+          $('.frb-methods').addClass('frb-haserror');
+          $('.frb-error-method').show();
+      }
+
+      if(status.amount === true && status.method === true){
+          if(!$('.frb-optin').is(':visible')) {
+              $('.frb-optin').slideDown();
+          }
+
+          // Only do step 2 if gift is one-time and payment method supports monthly
+          if( frb.getRecurring(document.getElementById('frb-form')) || $('#frb-frequency-monthly').prop('disabled') ) {
+              frb.submitForm(frb.storedOptions);
+          } else {
+              $('.frb-rml-link').fadeOut();
+              $('.frb-step1').fadeToggle(function(){
+                  $('.frb-step2').fadeToggle();
+                  $('.frb-rml-form').hide();
+                  $('.frb-upsell').show().css('display', 'block');
+                  $('.close-optin').show();
+                  $('.frb-close').hide();
+              });
+          }
+      }
+  });
+    
+
 </script>
 </body></html>
