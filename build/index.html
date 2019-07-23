@@ -1,5 +1,5 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin --><html><head>
- <!-- CREATED AT: Mon Jul 22 2019 20:26:56 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Mon Jul 22 2019 20:36:47 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -1632,7 +1632,7 @@ button.frb-submit.active:hover {
 /* End 80% viewport height*/
 
 
-/* Module: Upsell on: Mon Jul 22 2019 20:26:56 GMT-0500 (Central Daylight Time) */
+/* Module: Upsell on: Mon Jul 22 2019 20:36:47 GMT-0500 (Central Daylight Time) */
 
 /* STEP 2 */
 .frb--minimized, .frb-step2 { display: none; }
@@ -1682,6 +1682,30 @@ button.frb-submit.active:hover {
     text-align: center;
     font-size: 18px;
 }
+
+
+/* BACK BUTTON */
+.frb-back {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    left: 27px;
+    top: 0;
+}
+.frb-back:hover .frb-icon path {
+    stroke: #000;
+}
+.frb-back:hover .frb-icon fill {
+    fill: #000;
+}
+.frb-icon-back {
+    height: 13px;
+    width: 20px;
+}
+.frb--minimized .frb-back {
+    display: none !important;
+}
+
 /* Module: Upsell */
     
 
@@ -1760,6 +1784,13 @@ button.frb-submit.active:hover {
         </div><!--frb-message-->
 
         <div class="frb-form">
+<div class="frb-back close-optin" tabindex="0">
+    <svg class="frb-icon frb-icon-back" aria-labelledby="frb-icon-back-title" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16"><title id="frb-icon-back-title">Back</title><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><path stroke="#72777D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778" d="M7.181 13.285L.753 7 7.181.715"/><rect width="18.182" height="1.778" x=".818" y="6.111" fill="#72777D" rx=".889"/></g></svg>
+</div>
+<div class="frb-back close-optin2" tabindex="0">
+    <svg class="frb-icon frb-icon-back" aria-labelledby="frb-icon-back-title" xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16"><title id="frb-icon-back-title">Back</title><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><path stroke="#72777D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778" d="M7.181 13.285L.753 7 7.181.715"/><rect width="18.182" height="1.778" x=".818" y="6.111" fill="#72777D" rx=".889"/></g></svg>
+</div>
+    
 
             <div class="frb-buttons">
                 <span id="yes-button" class="banner-button" tabindex="0">Yes, I'll donate %MINIMUM%</span>
