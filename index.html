@@ -1702,7 +1702,7 @@ button.frb-submit.active:hover {
 
         <div class="frb-message__share">
             <div class="frb-share__content">
-                <p class="frb-share__text">Can’t donate right now? Sharing is also caring! ❤️</p>
+                <div class="frb-share__text">Can’t donate right now? Sharing is also caring! ❤️</div>
                 
                 <div class="frb-share__buttons">
 
@@ -1750,34 +1750,7 @@ button.frb-submit.active:hover {
 
                     <div class="frb-message__share">
                         <div class="frb-share__content">
-                            <div class="frb-share__text">
-                                Can’t donate right now? Sharing is also caring! ❤️
-                                <div class="frb-share__buttons">
-
-                                    <!-- Facebook share button -->
-                                    <button class="frb-share__button frb-share__button--facebook" title="Share on Facebook" alt="Share on Facebook">  
-                                        <svg class="frb-share__button--icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.3889 1.5H4.61111C2.89149 1.5 1.5 2.89149 1.5 4.61111V12.3889C1.5 14.1085 2.89149 15.5 4.61111 15.5H8.98307V10.0859H7.16016V7.96528H8.98307V6.40668C8.98307 4.59896 10.089 3.61458 11.7023 3.61458C12.2461 3.61155 12.7869 3.64193 13.3277 3.69661V5.58637H12.2188C11.3377 5.58637 11.1675 5.99957 11.1675 6.61328V7.96224H13.2669L12.9935 10.0829H11.1554V15.5H12.3889C14.1085 15.5 15.5 14.1085 15.5 12.3889V4.61111C15.5 2.89149 14.1085 1.5 12.3889 1.5Z" fill="white"></path>
-                                        </svg><span class="frb-share__button--label">Share</span>
-                                    </button>
-
-                                    <!-- Twitter share button -->
-                                    <button class="frb-share__button frb-share__button--twitter" title="Tweet this" alt="Tweet this">
-                                        <svg class="frb-share__button--icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M6.39779 14.3838C11.6807 14.3838 14.5715 10.0028 14.5715 6.2101C14.5715 6.08685 14.5715 5.96361 14.5659 5.84036C15.1261 5.43699 15.6135 4.92718 16.0001 4.35015C15.4847 4.57984 14.9301 4.7311 14.3474 4.80393C14.9413 4.45099 15.395 3.88516 15.6135 3.21289C15.0589 3.54342 14.4427 3.77872 13.7872 3.90757C13.2606 3.34734 12.5155 3 11.6919 3C10.1065 3 8.81797 4.28852 8.81797 5.87397C8.81797 6.09806 8.84598 6.31655 8.8908 6.52943C6.50423 6.41179 4.38657 5.26332 2.96919 3.52661C2.72269 3.95239 2.58264 4.44539 2.58264 4.972C2.58264 5.96921 3.09244 6.84876 3.85996 7.36417C3.38937 7.34737 2.94678 7.21851 2.56023 7.00563C2.56023 7.01683 2.56023 7.02804 2.56023 7.04484C2.56023 8.43421 3.55183 9.59948 4.86276 9.86279C4.62187 9.93002 4.36976 9.96363 4.10646 9.96363C3.92158 9.96363 3.74231 9.94682 3.56864 9.91321C3.93279 11.0561 4.99722 11.8852 6.25213 11.9076C5.26613 12.6807 4.02802 13.1401 2.68348 13.1401C2.45378 13.1401 2.22409 13.1289 2 13.1009C3.26611 13.9076 4.77873 14.3838 6.39779 14.3838Z" fill="white"></path>
-                                        </svg><span class="frb-share__button--label">Tweet</span>
-                                    </button>
-
-                                    <!-- Email share button -->
-                                    <a class="frb-share__button frb-share__button--email" href="mailto:?subject=Subject...&amp;body=Make a donation... https://donate.wikimedia.org" title="Share via email" alt="Share via email">
-                                        <svg class="frb-share__button--icon" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15.4516 4.04503C15.3031 3.44448 14.754 3 14.0979 3H2.90203C2.24934 3 1.70716 3.44109 1.55176 4.03146L8.49996 8.30999L15.4516 4.04503Z" fill="white"></path>
-                                            <path d="M1.5 5.56519V12.626C1.5 13.386 2.12852 14.0001 2.90207 14.0001H14.0979C14.8715 14.0001 15.5 13.386 15.5 12.626V5.58215L8.5 9.87425L1.5 5.56519Z" fill="white"></path>
-                                        </svg><span class="frb-share__button--label">Share via email</span>
-                                    </a>
-                                </div>
-                            </div>
-                            
+                            <p class="frb-share__text">Can’t donate right now? Sharing is also caring! ❤️</p>
                             
                             <div class="frb-share__bottom">
                                 <a class="frb-share__dismiss-link frb-share__bottom-link" href>Don’t show this again</a>
@@ -2170,19 +2143,9 @@ $(function() {
     });
 
     // Hide Banner when on click and enter when focused
-    $('.frb--in-article .frb-close').on('click keypress', function() {
+    $('.frb-close').on('click keypress', function() {
         // New
-        $('.frb--in-article .frb-message__share').show();
-        // $('.frb-message__share--backdrop').show();
-        // $('.frb-message').addClass('blurred');
-        // $('.frb-form').addClass('blurred');
-        $(this).hide();
-    });
-
-    // Hide Banner when on click and enter when focused
-    $('.frb--minimized .frb-close').on('click keypress', function() {
-        // New
-        $('.frb--minimized .frb-message__share').show();
+        $('.frb-message__share').show();
         // $('.frb-message__share--backdrop').show();
         // $('.frb-message').addClass('blurred');
         // $('.frb-form').addClass('blurred');
@@ -2290,17 +2253,10 @@ $(function() {
                 $('.frb-prevent-page-jump').show();
             }
 
-            $('.frb--in-article .frb-message__share').hide();
-            $('.frb--minimized .frb-message__share').show();
-
-
+            $('.frb-share__text').append($('.frb-share__buttons'))
             $('.frb').addClass('frb--minimized');
             $('.frb').removeClass('frb--in-article');
         } else {
-            $('.frb--minimized .frb-message__share').hide();
-
-            $('.frb--in-article .frb-message__share').show();
-            
             $('.frb').addClass('frb--in-article');
             $('.frb-prevent-page-jump').css('display', 'none');
             $('.frb').removeClass('frb--minimized frb-rml-displayed');
