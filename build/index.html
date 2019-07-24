@@ -1,6 +1,6 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin -->
 
- <!-- CREATED AT: Wed Jul 24 2019 09:04:46 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Wed Jul 24 2019 10:10:18 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -1648,6 +1648,14 @@ button.frb-submit.active:hover {
     }
     .frb--minimized .frb-share__content {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .frb--minimized .frb-share__bottom-link + .frb-share__bottom-link  {
+        margin-left: 0;
+        margin-top: 10px;
+        display: block;
     }
 }
 /* Sharing component */
