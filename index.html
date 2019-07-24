@@ -2260,7 +2260,7 @@ $(function() {
             $('.frb').removeClass('frb--in-article');
         } else {
             if ($('.frb-share__text > .frb-share__buttons').length > 0) {
-                $('.frb-share__content').append($('.frb-share__buttons'))
+                $('.frb-share__text').next($('.frb-share__buttons'))
             }
             $('.frb').addClass('frb--in-article');
             $('.frb-prevent-page-jump').css('display', 'none');
