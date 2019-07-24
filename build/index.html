@@ -1,6 +1,6 @@
 <!-- Large desktop banner. Must be used with "Large banner limit and switch" mixin -->
 
- <!-- CREATED AT: Tue Jul 23 2019 20:50:41 GMT-0500 (Central Daylight Time) -->
+ <!-- CREATED AT: Tue Jul 23 2019 20:59:48 GMT-0500 (Central Daylight Time) -->
 
 <style>
 /* Hide when editing */
@@ -2329,7 +2329,11 @@ $(function() {
     };
 
     frb.addMinimizedListener = function(){
-        $('body').on('click keypress', '.frb--minimized', function(e){
+        $('body').on('click keypress', '.frb--minimized', function(e) {
+            if ($('.frb-message__share').is(':visible')) {
+                return false
+            }
+            
             if (e.which === 13 || e.type === 'click') {
                 frb.clickedYes(e);
             }
