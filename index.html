@@ -2326,7 +2326,11 @@ $(function() {
     };
 
     frb.addMinimizedListener = function(){
-        $('body').on('click keypress', '.frb--minimized', function(e){
+        $('body').on('click keypress', '.frb--minimized', function(e) {
+            if ($('.frb-message__share').is(':visible')) {
+                return false
+            }
+            
             if (e.which === 13 || e.type === 'click') {
                 frb.clickedYes(e);
             }
